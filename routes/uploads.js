@@ -19,7 +19,6 @@ router.post('/', (req, res) => {
       // An error occurred when uploading
       console.log('err', err)
     }
-    res.json({success: true, message: 'Image uploaded!'});
 
     //  get file from post request
     var file = req.file
@@ -35,6 +34,7 @@ router.post('/', (req, res) => {
     getHash(filePath).then(hash => {
       //push manifest file to bluzelle
       manFile = getMan(file, hash);
+      res.json({success: true, message: 'File uploaded!', hash});
     })
   })
 });

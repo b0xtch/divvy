@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import axios, { post } from 'axios';
+import { browserHistory } from 'react-router';
+
 
 class Main extends Component {
 
   constructor(props) {
     super(props);
     this.state ={
-      file:null
+      file:null,
+      hash:null
     }
     this.onFormSubmit = this.onFormSubmit.bind(this)
     this.onChange = this.onChange.bind(this)
@@ -15,11 +18,21 @@ class Main extends Component {
   onFormSubmit(e){
     e.preventDefault() // Stop form submit
     this.fileUpload(this.state.file).then((response)=>{
-      console.log(response.data);
+      console.log(response.data.hash);
+      this.setState({ hash: response.data.hash});
+      this.directUser()
     })
   }
   onChange(e) {
     this.setState({file:e.target.files[0]})
+  }
+  directUser(){
+    
+    //return <Redirect to='http://localhost:8080/ipfs/' + this.state.hash />
+    //const path = `/repos/${this.state.hash}`
+    window.location.assign('http://localhost:8080/ipfs/' + this.state.hash);
+
+    console.log(this.state.hash);
   }
   fileUpload(file){
     const url = '/upload';
