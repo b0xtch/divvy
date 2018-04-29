@@ -1,7 +1,7 @@
 const bluzelle = require('bluzelle')
 const manifesto = require('./manifest');
 
-bluzelle.connect('ws://13.78.131.94:51012', 'b1546929-8a80-47e1-a982-23487673d454');
+bluzelle.connect('ws://13.78.131.140:51014', 'b1546929-8a80-47e1-a982-23487673d454');
 
 function createNumApp(value) {
   bluzelle.create('NumApps', value).then(() => {
