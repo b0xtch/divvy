@@ -3,6 +3,7 @@ import axios, { post } from 'axios';
 import { browserHistory } from 'react-router';
 
 
+
 class Main extends Component {
 
   constructor(props) {
@@ -27,7 +28,7 @@ class Main extends Component {
     this.setState({file:e.target.files[0]})
   }
   directUser(){
-    
+
     //return <Redirect to='http://localhost:8080/ipfs/' + this.state.hash />
     //const path = `/repos/${this.state.hash}`
     window.location.assign('http://localhost:8080/ipfs/' + this.state.hash);
@@ -48,9 +49,10 @@ class Main extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit}>
-        <input type="file" onChange={this.onChange} />
-        <button type="submit">Upload</button>
+        <form class="bottom-form" onSubmit={this.onFormSubmit}>
+
+        <input id="choose-file" class="col align-self-center" type="file" onChange={this.onChange} />
+        <button class="col align-self-center" type="submit">Upload Project</button>
       </form>
    )
   }
