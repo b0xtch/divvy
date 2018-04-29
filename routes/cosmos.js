@@ -23,18 +23,19 @@ var cosmos = {
     hash = await ipfs.util.addFromFs(path, { recursive: true})
     console.log('Orig hash is: ' + hash[0].hash)
     //Call pin
-    cosmos.addHash(hash[0].hash)
+    return await cosmos.addHash(hash[0].hash)
   },
   addHash: async (hash) => {
     const res = await ipfs.files.add(new Buffer(hash))
     console.log('String hash is: ', res[0].hash)
     //Call pin
     //Store under user
-    cosmos.getHash(res[0].hash)
+    return await cosmos.getHash(res[0].hash)
   },
   getHash: async (hash) => {
     path = await ipfs.files.get(hash)
     console.log('Stored hash/s: ' + path[0].content.toString('UTF8'));
+    return (path[0].content.toString('UTF8'));
   }
 }
 

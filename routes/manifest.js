@@ -4,26 +4,27 @@ const uuidv4        = require('uuid/v4')
 //generate a manifest file given a file
 
 function getFileName(file) {
-  return file.name;
+  return file.originalname;
 }
 
 function getFileType(file) {
-  var filename = file.name;
+  var filename = file.originalname;
   return filename.substring(filename.lastIndexOf('.')+1, filename.length) || filename;
 }
 
-function createManifest(file) {
+function createManifest(file, hash) {
   const manifest = {
     id: uuidv1(),
     fileName: getFileName(file),
     fileType: getFileType(file),
-    uuid: uuidv4()
+    uuid: uuidv4(),
+    hash: hash
   }
   return manifest;
 }
 
-function setHash(manifest, hash) {
-  manifest.hash = hash;
+function setHash(object, hash) {
+  object.hash = hash;
   return manifest;
 }
 
