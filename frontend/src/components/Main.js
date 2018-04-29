@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios, { post } from 'axios';
+import '../App.css';
 
 class Main extends Component {
 
@@ -35,9 +36,10 @@ class Main extends Component {
 
   render() {
     return (
-      <form onSubmit={this.onFormSubmit}>
-        <input type="file" onChange={this.onChange} />
-        <button type="submit">Upload</button>
+        <form class="bottom-form" onSubmit={this.onFormSubmit}>
+
+        <input id="choose-file" class="col align-self-center" type="file" onChange={this.onChange} />
+        <button class="col align-self-center" type="submit">Upload Project</button>
       </form>
    )
   }

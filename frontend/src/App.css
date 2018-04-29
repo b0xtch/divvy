@@ -22,7 +22,51 @@
   font-size: large;
 }
 
+.bottom-form {
+  min-height: 100% !important;
+  min-weight: 100% !important;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+#file-form {
+  text-align:center;
+}
+
+.bottom-form {
+  min-width: 100%;
+  min-height: 100%;
+}
+
+#choose-file {
+  margin-left: 0px;
+  margin-right: 0px;
+  padding: 0;
+  margin-bottom: 25px;
+}
+
+h1 {
+  padding-bottom: 25px;
+}
+
+#description {
+  text-align: center !important;
+  font-size: 30px;
+  display: inline-block;
+  position: relative;
+  min-width: 100% !important;
+  padding-bottom: 25px;
+}
+
+#sub-description {
+  text-align: center !important;
+  font-size: 25px;
+  display: inline-block;
+  position: relative;
+  min-width: 100% !important;
+  padding-bottom: 25px;
+
 }

@@ -16,6 +16,7 @@
   "dependencies": {
     "bluzelle": "^0.6.2",
     "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0-beta.2",
     "chalk": "^2.4.1",
     "cors": "^2.8.4",
     "dotenv": "^5.0.1",
