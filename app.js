@@ -4,13 +4,14 @@ const express         = require('express')
       ,chalk          = require('chalk')
       ,cors           = require('cors')
       ,fileUpload     = require('express-fileupload')
-      //,routes         = require('./routes/routes')
+      ,routes         = require('./routes/routes')
+      ,config         = require('./config')
       ,errorHandler   = require('errorhandler')
       ,dotenv         = require('dotenv')
       ,logger         = require('morgan')
-      ,bluzelle       = require('bluzelle')
-      ,index          = require('./routes/index')
-      ,nodes          = require('./routes/nodes');
+      ,multer         = require('multer');
+      // ,index          = require('./routes/index')
+      // ,uploads        = require('./routes/uploads');
 
 /**
  * Cosmos
@@ -26,13 +27,12 @@ var app = express();
 /**
  * Express configuration.
  */
+config(app);
+app.use(multer({ dest: 'uploads/' }).single('file'));
 app.set('port', process.env.PORT || 8080);
 app.set('view engine', 'pug');
-//routes(app);
-app.use('/', index);
-app.use('/upload', nodes);
 app.use(cors());
-app.use(fileUpload());
+//app.use(fileUpload());
 app.use(logger('short'));
 app.use(errorHandler());
 app.use(bodyParser.json());
@@ -41,20 +41,12 @@ app.use(express.static(path.join(__dirname, 'cosmos')));
 //process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 //app.use(subdomain({ base : 'myapp.dev', removeWWW : true }));
 
-// app.post('/upload', (req, res, next) => {
-//   console.log(req);
-//   let rFile = req.body;
-//   console.log(rFile);
-//
-//   // imageFile.mv(`${__dirname}/public/${req.body.filename}.jpg`, function(err) {
-//   //   if (err) {
-//   //     return res.status(500).send(err);
-//   //   }
-//   //
-//   //   res.json({file: `public/${req.body.filename}.jpg`});
-//   // });
-// });
-
+/**
+ * Express routing.
+ */
+routes(app);
+// app.use('/', index);
+// app.use('/upload', uploads);
 
 /**
  * Start Express server.

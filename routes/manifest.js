@@ -1,30 +1,24 @@
+const uuidv4        = require('uuid/v4')
+      ,uuidv1       = require('uuid/v1');
+
 //generate a manifest file given a file
 
 function getFileName(file) {
-  return file.getName;
+  return file.name;
 }
 
 function getFileType(file) {
-  var filename = File.getName();
+  var filename = file.name;
   return filename.substring(filename.lastIndexOf('.')+1, filename.length) || filename;
-}
-
-function getUUID() {
-  return uuidv4();
-}
-
-function getFileId() {
-  return uuidv1();
 }
 
 function createManifest(file) {
   const manifest = {
-    id: getFileId,
-    fileName: getFileName,
-    fileType: getFileType,
-    uuid: getUUID
+    id: uuidv1(),
+    fileName: getFileName(file),
+    fileType: getFileType(file),
+    uuid: uuidv4()
   }
-  console.log(manifest);
   return manifest;
 }
 

@@ -1,8 +1,5 @@
-const express        = require('express')
-      ,router        = express.Router()
-      ,uuidv4        = require('uuid/v4')
-      ,manifesto     = require('./manifest')
-      ,cosmic        = require('./cosmos');
+const router         = require('express').Router()
+      ,uuidv4        = require('uuid/v4');
 
       //cosmic.pinit()
       //hash = cosmic.addFile('public/MindFieldS2E1.mp4')

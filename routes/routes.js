@@ -1,10 +1,10 @@
-const index           = require('./index')
-      ,nodes          = require('./nodes')
+const index             = require('./index')
+      ,uploads          = require('./uploads');
 
 /**
  * Routing Config
  */
 module.exports = (app) =>{
   app.use('/', index);
-  app.use('/upload', nodes);
+  app.use('/upload', uploads);
 }
