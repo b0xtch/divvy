@@ -29,7 +29,7 @@ var app = express();
  */
 config(app);
 app.use(multer({ dest: 'uploads/' }).single('file'));
-app.set('port', process.env.PORT || 9000);
+app.set('port', process.env.PORT || 8080);
 app.set('view engine', 'pug');
 app.use(cors());
 //app.use(fileUpload());
