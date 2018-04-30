@@ -1,7 +1,7 @@
-const bluzelle = require('bluzelle')
+const bluzelle = require('bluzelle');
 const manifesto = require('./manifest');
 
-bluzelle.connect('ws://13.78.131.140:51014', 'a9ef8529-9bce-4895-871d-6fb2f9f98d0b');
+bluzelle.connect('ws://13.78.131.94:51012', 'b1546929-8a80-47e1-a982-23487673d454');
 
 function createNumApp(value) {
   bluzelle.create('NumApps', value).then(() => {
@@ -49,9 +49,6 @@ function removeApp(fileName) {
     console.log(`Failed to remove ${fileName}`)
   });
 }
-
-module.exports.addApp = addApp;
-module.exports.removeApp = removeApp;
 
 //CRUD AND MORE ------------
 
@@ -118,3 +115,6 @@ function query() {
     return null;
   }
 }
+
+module.exports.addApp = addApp;
+module.exports.removeApp = removeApp;

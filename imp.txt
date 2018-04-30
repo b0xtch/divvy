@@ -27,5 +27,4 @@ docker container ls -aq
 BluzellexPortal.Network
 
 ##
-13.78.131.140:51014
-uuid: a9ef8529-9bce-4895-871d-6fb2f9f98d0b
+13.78.131.94:51012', 'b1546929-8a80-47e1-a982-23487673d454'

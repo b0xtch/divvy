@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import axios, { post } from 'axios';
-import { browserHistory } from 'react-router';
 import '../App.css';
 
 
