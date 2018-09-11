@@ -33,8 +33,8 @@ router.post('/', (req, res) => {
 
     getHash(filePath).then(hash => {
       //push manifest file to bluzelle
-      manFile = getMan(file, hash);
       res.json({success: true, message: 'File uploaded!', hash});
+      manFile = getMan(file, hash);
     })
   })
 });
@@ -49,7 +49,7 @@ getMan = async (file, hash) => {
   await masterDb.addApp(uuid);
   await bfile.setConnection(uuid);
   await bfile.createManifest(manFile.fileName, manFile);
-  return manFile
+  return manFile;
 }
 
 module.exports = router;

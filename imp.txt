@@ -24,7 +24,8 @@ docker container ls -aq
 ## bluzelle starter
 
 ## Portal
-BluzellexPortal.Network
+Bluzelle x Portal.Network
+http://hackathon.portal.network/
 
 ##
 13.78.131.94:51012', 'b1546929-8a80-47e1-a982-23487673d454'

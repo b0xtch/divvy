@@ -13,7 +13,7 @@ function createNumApp(value) {
 
 //add new app into database
 function addApp(uuidv4) {
-  console.log(uuidv4 + " masterDB");
+  console.log(uuidv4 + " new app");
   //get the number of elements in the database right now
   //check if there already exists a key in the database with numApps
   var numApps = 1;
